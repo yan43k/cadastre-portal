@@ -164,9 +164,11 @@ export default function HomePage() {
             <div className="flex items-start gap-3">
               <Shield className="mt-1 h-6 w-6 shrink-0 text-sand" />
               <div>
-                <SectionLabel className="!text-sand/90">Официальный статус</SectionLabel>
-                <p className="mt-3 font-display text-2xl">Документальная прозрачность</p>
-                <p className="mt-2 text-sm leading-relaxed text-cream/85">
+                <SectionLabel className="!text-sand">Официальный статус</SectionLabel>
+                <p className="mt-3 font-display text-2xl font-semibold text-cream">
+                  Документальная прозрачность
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-sand">
                   Ниже приведены ключевые сведения, подтверждающие правовой статус и организацию
                   профессиональной деятельности.
                 </p>
