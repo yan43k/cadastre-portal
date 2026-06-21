@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>http://localhost:5174/</loc><changefreq>weekly</changefreq><priority>1</priority></url>
+  <url><loc>http://localhost:5174/about</loc><changefreq>monthly</changefreq></url>
+  <url><loc>http://localhost:5174/services</loc><changefreq>weekly</changefreq></url>
+  <url><loc>http://localhost:5174/consultation</loc><changefreq>monthly</changefreq></url>
+  <url><loc>http://localhost:5174/track</loc><changefreq>yearly</changefreq></url>
+  <url><loc>http://localhost:5174/calculator</loc><changefreq>yearly</changefreq></url>
+  <url><loc>http://localhost:5174/normatives</loc><changefreq>monthly</changefreq></url>
+  <url><loc>http://localhost:5174/partners</loc><changefreq>yearly</changefreq></url>
+  <url><loc>http://localhost:5174/vacancies</loc><changefreq>monthly</changefreq></url>
+  <url><loc>http://localhost:5174/news</loc><changefreq>weekly</changefreq></url>
+  <url><loc>http://localhost:5174/privacy</loc><changefreq>yearly</changefreq></url>
+</urlset>

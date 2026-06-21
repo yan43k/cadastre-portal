@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Павловский район (условно)" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [82.75, 53.38],
+            [83.12, 53.38],
+            [83.12, 53.26],
+            [82.75, 53.26],
+            [82.75, 53.38]
+          ]
+        ]
+      }
+    }
+  ]
+}
