@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useEffect, useState } from "react";
 import { api } from "../api/client";
+import { API_BASE } from "../config";
 import { Panel, SectionLabel } from "../components/Ui";
 import { SITE_URL } from "../config";
 
@@ -68,7 +69,7 @@ export default function NormativesPage() {
                 </a>
               )}
               {n.filePath && (
-                <a href={`/api/public/normatives/${n.id}/file`} className="font-medium">
+                <a href={`${API_BASE}/public/normatives/${n.id}/file`} className="font-medium">
                   Локальный файл
                 </a>
               )}

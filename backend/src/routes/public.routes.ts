@@ -93,7 +93,7 @@ publicRouter.get(
     })
   ),
   asyncHandler(async (req, res) => {
-    const { take } = req.query as unknown as { take: number };
+    const { take } = req.validatedQuery as { take: number };
     const items = await prisma.news.findMany({
       where: { published: true },
       orderBy: { publishedAt: "desc" },
@@ -123,7 +123,7 @@ publicRouter.get(
     })
   ),
   asyncHandler(async (req, res) => {
-    const { category } = req.query as unknown as { category?: string };
+    const { category } = req.validatedQuery as { category?: string };
     const items = await prisma.normativeItem.findMany({
       where: category ? { category } : undefined,
       orderBy: [{ sortOrder: "asc" }, { title: "asc" }],
@@ -320,7 +320,7 @@ publicRouter.get(
     })
   ),
   asyncHandler(async (req, res) => {
-    const { days } = req.query as unknown as { days: number };
+    const { days } = req.validatedQuery as { days: number };
     const from = new Date();
     from.setHours(0, 0, 0, 0);
     const to = new Date(from);

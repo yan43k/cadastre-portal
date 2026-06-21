@@ -21,7 +21,7 @@ export function validateQuery<S extends ZodTypeAny>(schema: S) {
   return (req: AuthRequest, _res: Response, next: NextFunction) => {
     try {
       const parsed = schema.parse(req.query);
-      (req as { query: unknown }).query = parsed;
+      (req as AuthRequest & { validatedQuery: z.infer<S> }).validatedQuery = parsed;
       next();
     } catch (err) {
       if (err instanceof ZodError) {

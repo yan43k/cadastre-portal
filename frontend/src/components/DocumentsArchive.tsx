@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FileText } from "lucide-react";
 import { api } from "../api/client";
+import { API_BASE } from "../config";
 import { Panel, StampRibbon } from "./Ui";
 
 type Doc = {
@@ -36,7 +37,7 @@ export function DocumentsArchive({ limit }: { limit?: number }) {
           <p className="mt-2 font-display text-lg font-semibold text-bistre">{d.title}</p>
           {d.description && <p className="mt-2 text-sm text-ink/80">{d.description}</p>}
           <a
-            href={`/api/public/documents/${d.id}/file`}
+            href={`${API_BASE}/public/documents/${d.id}/file`}
             className="mt-4 inline-block text-sm font-medium no-underline"
           >
             Открыть PDF

@@ -69,7 +69,7 @@ adminRouter.get(
   "/applications",
   validateQuery(paginationSchema.extend({ status: z.string().optional() })),
   asyncHandler(async (req: AuthRequest, res) => {
-    const qp = req.query as unknown as z.infer<typeof paginationSchema> & {
+    const qp = req.validatedQuery as z.infer<typeof paginationSchema> & {
       status?: string;
     };
     const { page, pageSize, q, status } = qp;
@@ -390,7 +390,7 @@ adminRouter.get(
   "/reviews",
   validateQuery(paginationSchema),
   asyncHandler(async (req, res) => {
-    const { page, pageSize } = req.query as unknown as z.infer<typeof paginationSchema>;
+    const { page, pageSize } = req.validatedQuery as z.infer<typeof paginationSchema>;
     const skip = (page - 1) * pageSize;
     const [total, items] = await Promise.all([
       prisma.review.count(),
@@ -476,7 +476,7 @@ adminRouter.get(
   "/users",
   validateQuery(paginationSchema),
   asyncHandler(async (req, res) => {
-    const { page, pageSize, q } = req.query as unknown as z.infer<typeof paginationSchema>;
+    const { page, pageSize, q } = req.validatedQuery as z.infer<typeof paginationSchema>;
     const skip = (page - 1) * pageSize;
     const where: Prisma.UserWhereInput = q?.trim()
       ? {
