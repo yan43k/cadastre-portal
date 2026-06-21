@@ -7,22 +7,30 @@ const partners = [
     name: "Росреестр / Федеральная служба государственной регистрации",
     role:
       "Взаимодействие в части подачи документов для кадастрового учёта и регистрации прав в рамках установленных процедур.",
+    logo: "/partners/rosreestr.svg",
+    logoAlt: "Условный знак Росреестра",
   },
   {
     name: "Юридические компании региона",
     role:
       "Корреспонденция по сделкам, согласованию проектов договоров и сопровождению регистрационных действий.",
+    logo: "/partners/legal.svg",
+    logoAlt: "Символ юридического партнёрства",
   },
   {
     name: "Оценочные организации",
     role: "Согласование исходных данных для объектов, требующих определения рыночной или иной стоимости.",
+    logo: "/partners/appraisal.svg",
+    logoAlt: "Символ оценочной организации",
   },
   {
     name: "Строительные и проектные организации",
     role:
       "Получение исполнительной документации, обследования объектов, согласование координатной основы.",
+    logo: "/partners/construction.svg",
+    logoAlt: "Символ строительной организации",
   },
-];
+] as const;
 
 export default function PartnersPage() {
   return (
@@ -40,8 +48,15 @@ export default function PartnersPage() {
       <div className="mt-10 grid gap-4 md:grid-cols-2">
         {partners.map((p) => (
           <Panel key={p.name}>
-            <div className="flex h-12 w-12 items-center justify-center border-2 border-dashed border-line text-xs text-sepia">
-              логотип
+            <div className="flex h-16 w-16 items-center justify-center overflow-hidden border border-line bg-parchment/80 p-1 shadow-seal">
+              <img
+                src={p.logo}
+                alt={p.logoAlt}
+                width={64}
+                height={64}
+                className="h-14 w-14 object-contain"
+                loading="lazy"
+              />
             </div>
             <p className="mt-4 font-display text-xl text-bistre">{p.name}</p>
             <p className="mt-3 text-sm leading-relaxed text-ink/80">{p.role}</p>
