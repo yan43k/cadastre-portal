@@ -1,0 +1,16 @@
+# Render Blueprint (опционально). Для ручного деплоя см. README.
+services:
+  - type: web
+    name: cadastre-portal-api
+    runtime: node
+    rootDir: backend
+    buildCommand: npm run render:build
+    startCommand: npm start
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        value: file:./dev.db
+      - key: COOKIE_SECURE
+        value: true
